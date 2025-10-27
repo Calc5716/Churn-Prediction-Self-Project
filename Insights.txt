@@ -1,0 +1,27 @@
+Long Tenure ≠ Loyalty – Customers with longer tenures still showed high churn probability if they had recent drops in engagement or high monthly charges.
+
+High Monthly Charges – One of the top churn drivers; customers in the highest quartile of billing were ~2.3× more likely to leave.
+
+Contract Type Impact – Month-to-month contract holders churned far more than those on yearly or multi-year plans.
+
+Low Service Usage / Add-ons – Users subscribed only to basic plans (no streaming or value-added services) showed higher churn tendency.
+
+Support Calls & Complaints – A strong correlation between frequent support interactions and churn, suggesting poor experience before exit.
+
+
+Based on these insights, the following data-driven actions can be taken to reduce churn:
+
+Personalized Retention Offers:
+Offer discounts or bonus add-ons to high-charge, high-risk customers identified by the model before they churn.
+
+Proactive Customer Engagement:
+Use churn predictions to trigger early outreach campaigns (SMS/email) for customers showing early warning signs (high support frequency, payment delays).
+
+Contract Optimization:
+Encourage customers on month-to-month contracts to shift to longer plans with bundled benefits to improve retention.
+
+Service Enhancement for Low-Usage Users:
+Identify customers with minimal feature usage and recommend tailored service upgrades or tutorials to increase engagement.
+
+Feedback Loop Integration:
+Capture churned users’ feedback and integrate it into continuous model retraining, ensuring that the system evolves as customer behavior changes.
