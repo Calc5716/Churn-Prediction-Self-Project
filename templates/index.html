@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Churn Prediction</title>
+    <link rel="stylesheet" href="./static/style.css" />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Churn Prediction</h2>
+      <form action="/predict" method="post">
+        <label for="gender" id = 'gender_label'>Gender:</label>
+        <select name="gender" id="gender" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+
+        <label for="SeniorCitizen" id = 'senior_label'>Senior Citizen:</label>
+        <select name="SeniorCitizen" id="SeniorCitizen" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+
+        <label for="Partner" id = 'partner_label'>Partner:</label>
+        <select name="Partner" id="Partner" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Dependents" id = 'dep_label'>Dependents:</label>
+        <select name="Dependents" id="Dependents" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="tenure" id = 'tenure_label'>Tenure (in Months):</label>
+        <input type="number" name="tenure" id = 'tenure'/>
+
+        <label for="PhoneService" id = 'phone_label'>Phone Service:</label>
+        <select name="PhoneService" id="PhoneService" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="MultipleLines" id = 'multiple_label'>Multiple Lines:</label>
+        <select name="MultipleLines" id="MultipleLines" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No phone service">No phone service</option>
+        </select>
+
+        <label for="InternetService" id = 'internet_label'>Internet Service:</label>
+        <select name="InternetService" id="InternetService" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="DSL">DSL</option>
+          <option value="Fiber optic">Fiber optic</option>
+          <option value="No">No internet service</option>
+        </select>
+
+        <label for="OnlineSecurity" id = 'onlinesec_label'>Online Security:</label>
+        <select name="OnlineSecurity" id="OnlineSecurity" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+
+        <label for="OnlineBackup" id = 'backup_label'>Online Backup:</label>
+        <select name="OnlineBackup" id="OnlineBackup" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+
+        <label for="DeviceProtection" id = 'devprotect_label'>Device Protection:</label>
+        <select name="DeviceProtection" id="DeviceProtection" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+
+        <label for="TechSupport" id = 'techsupport_label'>Tech Support:</label>
+        <select name="TechSupport" id="TechSupport" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+
+        <label for="StreamingTV" id = 'streamingtv_label'>Streaming TV:</label>
+        <select name="StreamingTV" id="StreamingTV" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+       
+
+        <label for="StreamingMovies" id = 'streamingmov_label'>Streaming Movies:</label>
+        <select name="StreamingMovies" id="StreamingMovies" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="No internet service">No internet service</option>
+        </select>
+
+        <label for="Contract" id = 'contract_label'>Contract:</label>
+        <select name="Contract" id="Contract" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Month-to-month">Month-to-month</option>
+          <option value="One year">One year</option>
+          <option value="Two year">Two year</option>
+        </select>
+
+        <label for="PaperlessBilling" id = 'paperless_label'>Paperless Billing:</label>
+        <select name="PaperlessBilling" id="PaperlessBilling" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="PaymentMethod" id = 'payment_label'>Payment Method:</label>
+        <select name="PaymentMethod" id="PaymentMethod" class="cat" required>
+          <option value="">--Select--</option>
+          <option value="Electronic check">Electronic check</option>
+          <option value="Mailed check">Mailed check</option>
+          <option value="Bank transfer (automatic)">
+            Bank transfer (automatic)
+          </option>
+          <option value="Credit card (automatic)">
+            Credit card (automatic)
+          </option>
+        </select>
+
+        <label for="MonthlyCharges" id = 'monthly_label'>Monthly Charges:</label>
+        <input type="number" name="MonthlyCharges" id="MonthlyCharges" />
+
+        <label for="TotalCharges" id = 'total_label'>Total Charges:</label>
+        <input type="number" name="TotalCharges" id="TotalCharges" />
+
+        <input type="submit" value="Predict" id="predict-btn"/>
+      </form>
+      {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+      {% endif %}
+    </div>
+  </body>
+</html>
