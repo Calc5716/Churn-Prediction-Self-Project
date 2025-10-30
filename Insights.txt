@@ -1,8 +1,5 @@
-The following insights were drawn from the EDA:
 
-1)
-
-Based on these insights, the following data-driven actions can be taken to reduce churn:
+Based on the insights drawn from EDA(present on the notebook), the following data-driven actions can be taken to reduce churn:
 
 1) Personalized Retention Offers:
 Offer discounts or bonus add-ons to high-charge, high-risk customers identified by the model before they churn.
@@ -17,3 +14,4 @@ Identify customers with minimal feature usage and recommend tailored service upg
 
 5) Feedback Loop Integration:
 Capture churned users’ feedback and integrate it into continuous model retraining, ensuring that the system evolves as customer behavior changes.
+
