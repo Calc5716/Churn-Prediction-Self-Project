@@ -3,11 +3,8 @@
 ## Overview
 This project implements an end-to-end Machine Learning pipeline to predict **customer churn** for a telecommunications company. The goal is to identify customers at high risk of leaving (`Churn=Yes`) using various behavioral and demographic features, allowing the business to proactively intervene with retention strategies.
 
-The solution uses an **XGBoost Classifier**, optimized through **Optuna**, and deployed via a robust **imblearn Pipeline** that correctly handles data preprocessing and class imbalance.
+The solution uses an **XGBoost Classifier**, optimized through **Optuna**, and deployed via a robust **imblearn Pipeline** that correctly handles **data preprocessing, class imbalance, model optimization, and web deployment** through Flask, hosted on **Render**, providing users with an interactive web interface to predict churn probabilities in real time.
 
-The project combines **data preprocessing, model optimization, and web deployment** through Flask, providing users with an interactive web interface to predict churn probabilities in real time.
-
-This project extends the **Customer Churn Prediction ML Pipeline** by integrating it into a **Flask-based web application** hosted on **Render**.  
 Users can input customer details through an intuitive interface built with HTML and CSS, and receive real-time predictions powered by the optimized XGBoost model.
 (The Churn Web App codes are on the `master` branch).
 
