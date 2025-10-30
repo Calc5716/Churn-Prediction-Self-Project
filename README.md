@@ -1,13 +1,30 @@
-# 💡 Customer Churn Prediction Project
+# Customer Churn Prediction Project
 
 ## Overview
 This project implements an end-to-end Machine Learning pipeline to predict **customer churn** for a telecommunications company. The goal is to identify customers at high risk of leaving (`Churn=Yes`) using various behavioral and demographic features, allowing the business to proactively intervene with retention strategies.
 
 The solution uses an **XGBoost Classifier**, optimized through **Optuna**, and deployed via a robust **imblearn Pipeline** that correctly handles data preprocessing and class imbalance.
 
----
+The project combines **data preprocessing, model optimization, and web deployment** through Flask, providing users with an interactive web interface to predict churn probabilities in real time.
 
-## 🚀 Key Features and Techniques
+This project extends the **Customer Churn Prediction ML Pipeline** by integrating it into a **Flask-based web application** hosted on **Render**.  
+Users can input customer details through an intuitive interface built with HTML and CSS, and receive real-time predictions powered by the optimized XGBoost model.
+(The Churn Web App codes are on the `master` branch).
+
+---
+## Screenshots from the web App
+
+1. ### Web App UI
+![Dashboard Preview](images/Screenshot%202025-10-30%20164005.png)
+
+2. ### Responsive UI for other devices
+![Dashboard Preview](images/Screenshot%202025-10-30%20164317.png)
+
+3. ### Output preview
+![Dashboard Preview](images/Screenshot%202025-10-30%20164210.png)
+
+---
+## Key Features and Techniques
 
 ### Exploratory Data Analysis (EDA)
 - In-depth analysis using **ydata-profiling** and custom visualizations.
@@ -30,10 +47,13 @@ The solution uses an **XGBoost Classifier**, optimized through **Optuna**, and d
 - A single consolidated **`imblearn.pipeline.Pipeline`** ensures:
   - All preprocessing steps, including SMOTE, are learned and applied correctly.
   - Prevents data leakage during training and prediction.
+  - **Interactive Web Interface:** Built with **Flask**, **HTML**, and **CSS** for intuitive user interaction.  
+-  **Cloud Deployment:** Hosted on **Render**, enabling live user access.  
+-  **Environment Management:** Utilized a Python **virtual environment** with all dependencies listed in `requirements.txt`.  
 
 ---
 
-## 🛠️ Corrected Pipeline Structure
+## Pipeline Structure
 The pipeline consolidates all preprocessing into a single `ColumnTransformer` before applying SMOTE and the final model.  
 This structure is robust for **NumPy arrays** and **index-based transformations**.
 
@@ -48,33 +68,38 @@ This structure is robust for **NumPy arrays** and **index-based transformations*
 ---
 
 ## 📈 Results and Evaluation
-The model is optimized for **ROC-AUC** and **F1-Score**, balancing the identification of churners (Recall) against minimizing false positives (Precision).
 
-| Metric     | Result    | Interpretation |
-|-----------|-----------|----------------|
-| ROC-AUC   | XX.X%     | Probability the model ranks a random positive instance higher than a random negative instance. |
-| F1-Score  | XX.X%     | Balanced measure of Precision and Recall. |
-| Precision | XX.X%     | Of all customers predicted to churn, XX.X% actually churn. |
-| Recall    | XX.X%     | XX.X% of all actual churners were correctly identified. |
+### Logistic Regression Baseline Model
+| Metric     | Result    |
+|-----------|-----------|
+| ROC-AUC   | 0.8537    | 
+| F1-Score  | 0.7837     |
+| Precision | 0.7551    | 
+| Recall    | 0.8146     | 
 
-> Replace `XX.X%` with actual scores from your final model evaluation.
+### XGBoost Tuned Model
+| Metric     | Result    |
+|-----------|-----------|
+| ROC-AUC   | 0.9316    | 
+| F1-Score  | 0.8119     |
+| Precision | 0.8378    | 
+| Recall    | 0.8200     | 
+
+---
+## Tech Stack
+
+- **Languages:** Python, HTML, CSS  
+- **Frameworks/Libraries:** Flask, Scikit-learn, XGBoost, Optuna, imblearn, Pandas, NumPy  
+- **Deployment:** Render  
+- **Tools:** Git, VS Code, joblib, virtualenv 
 
 ---
 
-## ⚙️ Dependencies
-- `pandas`
-- `numpy`
-- `scikit-learn`
-- `xgboost`
-- `imbalanced-learn`
-- `optuna`
-- `ydata-profiling`
-- `pickle`
+## How It Works
+
+1. **User Input:** Customer details are entered via the web form.  
+2. **Backend Processing:** The Flask app loads the trained joblib pipeline and processes inputs.  
+3. **Prediction:** The model outputs churn probability and classification result (e.g., “Likely to Churn”).  
+4. **Display:** The result is displayed on the web interface dynamically.
 
 ---
-
-## 💻 How to Run
-1. Download the Jupyter Notebook: `Churn_Prediction_Project.ipynb`.
-2. Ensure all dependencies are installed (use a **virtual environment** for best practice).
-3. Open and execute the notebook cells sequentially in Jupyter.
-4. The final, fitted pipeline is exported as a file (e.g., `final_churn_predictor_pipe.pkl`) and can be loaded for predictions in a production or scoring environment.
