@@ -12,6 +12,18 @@ Users can input customer details through an intuitive interface built with HTML 
 (The Churn Web App codes are on the `master` branch).
 
 ---
+
+## Dataset 
+
+[Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn "Dataset")
+
+---
+## Web App Link
+
+[Web App](https://churn-prediction-self-project.onrender.com/ "Visit Churn Prediction Website")
+
+---
+
 ## Screenshots from the web App
 
 1. ### Web App UI
